@@ -1,0 +1,19 @@
+{
+  "name": "assignment6",
+  "version": "1.0.0",
+  "description": "Simple routes using Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShardulDhiwar/SimpleRoutesUsingNodeJS.git"
+  },
+  "author": "Shardul Dhiwar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShardulDhiwar/SimpleRoutesUsingNodeJS/issues"
+  },
+  "homepage": "https://github.com/ShardulDhiwar/SimpleRoutesUsingNodeJS#readme"
+}
