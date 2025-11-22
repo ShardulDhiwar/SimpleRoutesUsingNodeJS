@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
 </html>
             `);
         
-        return res.end();
+         res.end();
 
         
     } else if (req.url === '/about') {
@@ -48,7 +48,7 @@ const server = http.createServer((req, res) => {
 </body>
 </html>
             `);
-        return res.end();
+     res.end();
         
     } else if (req.url === '/contact') {
         res.write(`
@@ -72,7 +72,7 @@ const server = http.createServer((req, res) => {
 </html>
             `);
         
-        return res.end();
+        res.end();
     } else {
             res.write(`
             <!DOCTYPE html>
@@ -94,7 +94,7 @@ const server = http.createServer((req, res) => {
 </body>
 </html>
             `);
-        return res.end();
+        res.end();
 
         } 
 
