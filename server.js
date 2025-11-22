@@ -2,11 +2,10 @@ const http = require('http');
 const PORT = 3000;
 const server = http.createServer((req, res) => {
 
-    if (req.method === 'GET' && req.url === '/') {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(`
+    if (req.url === '/') {
+        res.write(`
             <!DOCTYPE html>
-<html>
+<html>  
 <head>
     <title>Home</title>
 </head>
@@ -24,13 +23,16 @@ const server = http.createServer((req, res) => {
 </body>
 </html>
             `);
-    } else if (req.method === 'GET' && req.url === '/about') {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(`
-             <!DOCTYPE html>
+        
+        return res.end();
+
+        
+    } else if (req.url === '/about') {
+        res.write(`
+            <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>About</title>
 </head>
 <body style="background-color: lightblue; text-align: center; font-family: Cursive;">
 
@@ -46,13 +48,14 @@ const server = http.createServer((req, res) => {
 </body>
 </html>
             `);
-    } else if (req.method === 'GET' && req.url === '/contact') {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(`
-          <!DOCTYPE html>
+        return res.end();
+        
+    } else if (req.url === '/contact') {
+        res.write(`
+            <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>Contact</title>
 </head>
 <body style="background-color: lightblue; text-align: center; font-family: Cursive;">
 
@@ -67,11 +70,11 @@ const server = http.createServer((req, res) => {
 
 </body>
 </html>
-   
-        `);
+            `);
+        
+        return res.end();
     } else {
-        res.writeHead(404, { 'Content-Type': 'text/html' });
-        res.end(`
+            res.write(`
             <!DOCTYPE html>
 <html>
 <head>
@@ -86,12 +89,14 @@ const server = http.createServer((req, res) => {
     </nav>
 
     <h1 style="color: red;">404 Page Not Found</h1>
-    <p style="color: red;">Invalid URL
+    <p style="color: red;">Invalid URL</p>
 
 </body>
 </html>
             `);
-    }
+        return res.end();
+
+        } 
 
 });
 
